@@ -9,13 +9,14 @@
     <title><%= current_page.data.title || "Middleman" %></title>
 
     <%= stylesheet_link_tag :site %>
+    <script src="./javascripts/vendor/groundwork.js"></script>
     
-    <script src="/javascripts/querystring.min.js"></script>
+    
     
   </head>
 
   <body class="<%= page_classes %>">
     <%= yield %>
-    <%= javascript_include_tag :all, :async => true %>
+    <%= javascript_include_tag :app, :async => true %>
   </body>
 </html>

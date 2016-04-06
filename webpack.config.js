@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
   entry: {
-    all: './source/javascripts/all.jsx'
+    app: './source/javascripts/app.jsx'
   },
 
   resolve: {
@@ -27,5 +27,11 @@ module.exports = {
         }
       }
     ]
+  },
+
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
   }
 };
