@@ -15,7 +15,7 @@ class App extends React.Component {
         });
         this.state = {
           profile: {},
-          loggedIn: false
+          loggedIn: false,
         }
     }
 
@@ -24,7 +24,7 @@ class App extends React.Component {
         return (
           <div className="wrapper">
             <div clasName="content">
-              { React.cloneElement( this.props.children, {groundwork: this.state.groundwork})}
+              { React.cloneElement( this.props.children, {groundwork: this.groundwork})}
             </div>
           </div>
           )

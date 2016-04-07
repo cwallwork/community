@@ -1,94 +1,89 @@
 import React                                         from 'react';
 import R                                             from 'ramda';
-import {validate}                                    from "jsonschema";
+import {signupErrors, signupSchema}                  from './signupConstants.js';
+import {validateForm}                                from '../utils/formValidate.js';
+import {isEmpty}                                     from 'ramda';
 
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.displayName = 'SignupForm';
-        this.update = this.update.bind(this);
-
-        this.signupSchema = {
-          id: '/Signup',
-          type: 'object',
-          properties: {
-            givenName: {
-              type: 'string',
-              minLength: 1
-            },
-            familyName:  {
-              type: 'string',
-              minLength: 1
-            },
-            email: {
-              type: 'string',
-              minLength: 1,
-              pattern: /.+@.+/
-            },
-            postalCode: {
-              minLength: 1,
-              pattern: /^[0-9]*$/
-            }
-          }
-        }
-
-        this.signupErrors = {
-          givenName: "Please enter a First Name",
-          familyName: "Please enter a Last Name",
-          email: "Please enter a valid Email address",
-          postalCode: "Please enter a valid Zip Code"
-        }
+        this.update = this.update.bind(this);   
 
         this.state = {
-          givenName: "",
-          familyName: "",
-          email: "",
-          postalCode: "",
+          fields: {
+            givenName: "",
+            familyName: "",
+            email: "",
+            zipCode: "",
+            password: ""
+          },
           validationErrors: [],
         }
     }
 
     update(event){
-      let newState = R.clone(this.state);
-      newState[event.target.name] = event.target.value;
-      this.setState({newState});
+      let newFields = R.clone(this.state.fields);
+      newFields[event.target.name] = event.target.value;
+      this.setState({fields: newFields});
     }
 
     validate(event){
       event.preventDefault();
-      const rejectNonStrings = R.reject((value) => R.type(value) !== 'String');
-      const propsWithErrors = this.getErrors(validate(rejectNonStrings(this.state),this.signupSchema));
+      
+      const newErrors = validateForm(this.state.fields, signupErrors, signupSchema);
 
-      let newErrors = (props) => this.getErrorMessages(props);
-      this.setState({validationErrors: newErrors(propsWithErrors)})
-    }
-
-    getErrors(result) {
-      const isolatePropNames = R.map((errorMessage) => return errorMessage.split('.')[1]);
-      const getProps = R.map((error) => error.property);
-      return R.compose(R.uniq,isolatePropNames,getProps,result);
-    }
-
-    getErrorMessages(props) {
-      return R.map((prop) => this.signupErrors(prop));
+      if (isEmpty(newErrors)) {      
+        this.props.handleSignup(this.state.fields);
+      }
+      else {
+        this.setState({validationErrors: newErrors});
+      }
     }
 
     render() {
+
+      const {
+        givenName,
+        familyName,
+        email,
+        zipCode,
+        password,
+      } = this.state.fields;
+
+      const errors = this.state.validationErrors;
+      const signupFailMessages = this.props.errors;
+
         return (
           <div className="signup_container">
+            { !isEmpty(signupFailMessages)
+                ? <div className="singup-errors">
+                  {signupFailMessages.map( (error, idx) => <p key={idx} className="singup_error_paragraph">{error}</p>)}
+                  </div>
+                : undefined
+            }
             <form className="signup_form">
               <label>First Name</label>
-              <input type="text" name="givenName" value={this.state.givenName} onChange={(e) => this.update(e)}/>
+              <input type="text" name="givenName" value={givenName} onChange={(e) => this.update(e)}/>
               <label>Last Name</label>
-              <input type="text" name="familyName" value={this.state.familyName} onChange={(e) => this.update(e)}/>
+              <input type="text" name="familyName" value={familyName} onChange={(e) => this.update(e)}/>
               <label>Email address</label>
-              <input type="text" name="email" value={this.state.email} onChange={(e) => this.update(e)}/>
+              <input type="text" name="email" value={email} onChange={(e) => this.update(e)}/>
               <label>Zip code</label>
-              <input type="text" name="postalCode" value={this.state.postalCode} onChange={(e) => this.update(e)}/>
-              <button type="submit" onClick={ (e) => this.validate(e)} >Submit</button>
+              <input type="text" name="zipCode" maxLength="5" value={zipCode} onChange={(e) => this.update(e)}/>
+              <label>Password</label>
+              <input type="text" name="password" maxLength="100" value={password} onChange={(e) => this.update(e)}/>
+              <p>Passwords must be at least 8 characters long and contain: an upper case letter, a lower case letter, and a number.</p>
+              <button type="submit" onClick={(e) => this.validate(e)} >Submit</button>
             </form>
+            { !isEmpty(errors) 
+                ? <div className="form_errors">
+                    {errors.map( (error, idx) => <p key={idx} className="error_paragraph">{error}</p>)}
+                  </div>
+                : undefined
+            }
           </div>
-          );
+        );
     }
 }
 
