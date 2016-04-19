@@ -1,43 +1,57 @@
 @charset "utf-8";
 @import "normalize";
-$headerFont: 'Anton', sans-serif;
-$bodyFont: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@import "header";
+@import "tools";
+@import "community";
+@import "booklist";
+@import "signup";
+
+$headerFont: "Helvetica Neue", 'Arimo', sans-serif;
+$bodyFont: "Helvetica Neue", 'Arimo', sans-serif;
+
+$background-grey: #dedede;
+
 
 .header{
   text-align: center;
   font-family: $headerFont;
-  font-size: 2.5em;
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  & span{
-    white-space: nowrap;
-    & h1 {
-      display: inline-block;
-      font-weight: 400;
-      margin: 0;
-      padding: 0.4em;
-      @media screen and (max-width: 550px){
-        font-size: 1.5em;
-      }
-    }
-    & img {
-      height: 2em;
-      @media screen and (max-width: 550px){
-        height: 1.5em;
-      }
-    }
-    & .arrowdown{
-      -webkit-transform: rotate(180deg);
-         -moz-transform: rotate(180deg);
-          -ms-transform: rotate(180deg);
-           -o-transform: rotate(180deg);
-              transform: rotate(180deg);
-    }
+  font-size: 4em;
+  font-weight: 700;
+  color: #474433;
+  background-color: #dcb640;
+  padding: 1em;
+  & h2 {
+    margin: auto;
+    font-size: 2vw;
+    color: white;
+    width: 70%;
+    padding: 0.75em;
   }
 }
 
+.landing_body {
+  width: 85%;
+  max-width: 800px;
+  font-size: 1.25em;
+  margin: auto;
+  text-align: center;
+  padding: 1.5em;
+  & a {
+    text-align: center;
+    font-size: 1.5em;
+    margin: auto;
+    margin-top: 1em;
+    background-color: #474433;
+    color: white;
+    padding: 0 1.5em 0 1.5em;
+    border: none;
+    display: block;
+    width: 8em;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
 .container{
   width: 95%;
   max-width: 750px;
@@ -143,4 +157,8 @@ body {
     width: 10em;
     vertical-align: middle;
   }
+}
+
+.index {
+  background-color: $background-grey; 
 }

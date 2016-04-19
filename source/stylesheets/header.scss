@@ -1,0 +1,14 @@
+$font: 'Helvetica Neue', 'Arimo', sans-serif;
+$hive-yellow: #dcb640;
+$text-brown: #474433;
+
+.community_header {
+  background-color: $hive-yellow;
+  padding: 0.2em 4em 0.2em 4em;
+  font-family: $font;
+  & h1{
+    font-family: $font;
+    font-size: 3em;
+    font-weight: 700;
+  }
+}

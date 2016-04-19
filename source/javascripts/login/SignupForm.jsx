@@ -32,13 +32,11 @@ class SignupForm extends React.Component {
       event.preventDefault();
       
       const newErrors = validateForm(this.state.fields, signupErrors, signupSchema);
+      this.setState({validationErrors: newErrors});
 
       if (isEmpty(newErrors)) {      
         this.props.handleSignup(this.state.fields);
-      }
-      else {
-        this.setState({validationErrors: newErrors});
-      }
+      } 
     }
 
     render() {
@@ -56,8 +54,9 @@ class SignupForm extends React.Component {
 
         return (
           <div className="signup_container">
+            <h4>Enter Your Information</h4>
             { !isEmpty(signupFailMessages)
-                ? <div className="singup-errors">
+                ? <div className="singup_errors">
                   {signupFailMessages.map( (error, idx) => <p key={idx} className="singup_error_paragraph">{error}</p>)}
                   </div>
                 : undefined
@@ -67,14 +66,14 @@ class SignupForm extends React.Component {
               <input type="text" name="givenName" value={givenName} onChange={(e) => this.update(e)}/>
               <label>Last Name</label>
               <input type="text" name="familyName" value={familyName} onChange={(e) => this.update(e)}/>
-              <label>Email address</label>
+              <label>Email Address</label>
               <input type="text" name="email" value={email} onChange={(e) => this.update(e)}/>
-              <label>Zip code</label>
+              <label>Zip Code</label>
               <input type="text" name="zipCode" maxLength="5" value={zipCode} onChange={(e) => this.update(e)}/>
               <label>Password</label>
               <input type="text" name="password" maxLength="100" value={password} onChange={(e) => this.update(e)}/>
               <p>Passwords must be at least 8 characters long and contain: an upper case letter, a lower case letter, and a number.</p>
-              <button type="submit" onClick={(e) => this.validate(e)} >Submit</button>
+              <button type="submit" onClick={(e) => this.validate(e)} >SEND</button>
             </form>
             { !isEmpty(errors) 
                 ? <div className="form_errors">

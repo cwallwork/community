@@ -24,10 +24,12 @@ module.exports = {
         pattern: /.+@.+/
       },
       zipCode: {
+        type: 'string',
         minLength: 1,
         pattern: /^[0-9]*$/
       },
       password: {
+        type: 'string',
         minLength: 8,
         maxLength: 100,
         pattern: /^(?=.*\d)(?=.*[A-Z])(?!.*[^a-zA-Z0-9$^+=])(.{8,15})$/

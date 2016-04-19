@@ -23,6 +23,8 @@ configure :development do
   activate :livereload
 end
 
+activate :dotenv
+
 ###
 # Helpers
 ###

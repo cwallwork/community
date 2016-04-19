@@ -1,9 +1,11 @@
 import React                                                from "react";
 import ReactDOM                                             from "react-dom";
-import { Router, Route, IndexRoute, Link, browserHistory}   from 'react-router';
+import { Router, Route, IndexRoute, Link, hashHistory}      from 'react-router';
 import R                                                    from "ramda";
 import Login                                                from "./Login.jsx";
-import Community                                            from "./Community.jsx";
+import Community                                            from "./community/Community.jsx";
+import Landing                                              from "./Landing.jsx";
+import Books                                                from "./community/Books.jsx";
 
 
 class App extends React.Component {
@@ -19,6 +21,10 @@ class App extends React.Component {
         }
     }
 
+    static contextTypes = {
+      router: React.PropTypes.object
+    }
+
 
     render() {
         return (
@@ -32,10 +38,12 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Login}/>
+      <IndexRoute component={Landing}/>
+      <Route path="login" component={Login}/>
       <Route path="community" component={Community}/>
+      <Route path="books" component={Books}/>
     </Route>
   </Router>
   , document.getElementById('root'));

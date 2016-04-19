@@ -1,0 +1,51 @@
+.signup_intro_text {
+  width: 90vw;
+  max-width: 550px;
+  margin: auto;
+  font-size: 1.3em;
+  text-align: center;
+  padding: 1.5em; 
+}
+
+.signup_container, .login_container {
+  & h4{
+    padding: 0.5em;
+    background-color: #dcb640;
+    color: white;
+    text-align: left;
+  }
+  width: 90vw;
+  max-width: 550px;
+  margin: auto;
+  background-color: #ebebeb;
+  text-align: center;
+  & form {
+    padding: 1em;
+    & label {
+      width: 25%;
+      text-align: right;
+      margin-right: 1em;
+    }
+    & input {
+      display: inline-block;
+      width: 45%;
+    }
+    & p {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding: 0.5em;
+    }
+    & button {
+      font-size: 1.5em;
+      margin: auto;
+      background-color: #474433;
+      color: white;
+      padding: 0 1.5em 0 1.5em;
+      border: none;
+      margin: auto;
+      margin-top: 0.5em;
+      display: block;
+    }
+  }
+}
