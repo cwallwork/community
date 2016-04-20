@@ -71,7 +71,7 @@ class SignupForm extends React.Component {
               <label>Zip Code</label>
               <input type="text" name="zipCode" maxLength="5" value={zipCode} onChange={(e) => this.update(e)}/>
               <label>Password</label>
-              <input type="text" name="password" maxLength="100" value={password} onChange={(e) => this.update(e)}/>
+              <input type="password" name="password" maxLength="100" value={password} onChange={(e) => this.update(e)}/>
               <p>Passwords must be at least 8 characters long and contain: an upper case letter, a lower case letter, and a number.</p>
               <button type="submit" onClick={(e) => this.validate(e)} >SEND</button>
             </form>

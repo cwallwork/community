@@ -5,10 +5,11 @@ $text-brown: #474433;
 .community_header {
   background-color: $hive-yellow;
   padding: 0.2em 4em 0.2em 4em;
+  box-sizing: border-box;
   font-family: $font;
   & h1{
     font-family: $font;
-    font-size: 3em;
+    font-size: 5vw;
     font-weight: 700;
   }
 }

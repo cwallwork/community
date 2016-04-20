@@ -81,7 +81,7 @@ class Login extends React.Component {
                 : undefined }
 
             { this.state.showSignup ? <SignupForm errors={this.state.signupErrors} handleSignup={this.handleSignup} /> : undefined }
-            { !this.state.showSignup ? <p>Thanks for signing up. Please log in</p> : undefined }
+            { !this.state.showSignup ? <p className="signup_thanks">Thanks for signing up. Please log in</p> : undefined }
             <LoginForm errors={this.state.loginErrors} handleLogin={this.handleLogin}/>
             
           </div>

@@ -5,7 +5,7 @@ import R                                                    from "ramda";
 import Login                                                from "./Login.jsx";
 import Community                                            from "./community/Community.jsx";
 import Landing                                              from "./Landing.jsx";
-import Books                                                from "./community/Books.jsx";
+import Books                                                from "./community/books/Books.jsx";
 
 
 class App extends React.Component {

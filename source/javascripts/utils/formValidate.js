@@ -8,7 +8,6 @@ module.exports = {
       const isolatePropNames = map((errorMessage) => errorMessage.split('.')[1]);
       const getProps = map((error) => error.property);
       const getUniqueProps = compose(uniq,isolatePropNames,getProps);
-
       return getMessagesForProps(getUniqueProps(result));
     };
 

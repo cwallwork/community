@@ -1,5 +1,6 @@
 .BookItem {
   width: 20vw;
+  height: 35vw;
   min-width: 250px;
   max-width: 300px;
   margin: 0.5em;
@@ -8,8 +9,20 @@
   }
 }
 
-.fiction_container, .nonfiction_container {
+.fiction_container, .nonfiction_container, .children_nonfiction_container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: row;
+  width: 95%;
+  margin: auto;
+  @media screen and (max-width: 600px) {
+    justify-content: center;
+    flex-direction: none;
+  }
+}
+
+.books_container {
+  & h3 {
+    margin-left: 1em;
+  }
 }

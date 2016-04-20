@@ -4,7 +4,8 @@ module.exports = {
     givenName: "Please enter a First Name",
     familyName: "Please enter a Last Name",
     email: "Please enter a valid Email address",
-    zipCode: "Please enter a valid Zip Code"
+    zipCode: "Please enter a valid Zip Code",
+    password: "Please enter a valid password"
   },
 
   signupSchema: {

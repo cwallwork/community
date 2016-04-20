@@ -106,7 +106,10 @@ module.exports = {
             blurb: "Not Born a Refugee Woman is an in-depth inquiry into the identity construction of refugee women. It challenges and rethinks current identity concepts, policies, and practices in the context of a globalizing environment, and in the increasingly racialized post-September 11th context, from the perspective of refugee women. This collection brings together scholar practitioners from across a wide range of disciplines. The authors emphasize refugee women’s agency, resilience, and creativity, in the continuum of domestic, civil, and transnational violence and conflicts, whether in flight or in resettlement, during their uprooted journey and beyond. (Amazon.com)",
             image: "HA_Khanlou",
             url: ""
-          },
+          }
+        ],
+
+  "childrens": [
           {
             title: "Making It Home: Real-Life Stories from Children Forced to Flee",
             author: "Beverly Naidoo",
@@ -123,5 +126,5 @@ module.exports = {
             image: "Bradman",
             url: "",
           }
-  ]
+      ]
 }
