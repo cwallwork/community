@@ -75,7 +75,7 @@ class Login extends React.Component {
                       Choose a book, invite your guests, and start reading!
                     </p>
                     <p>
-                      Sign up and you can access all the tools and resources you need to plan a great event and engage in a lively book club discussion.
+                      Sign up below to access all the tools and resources you need to plan a great event and engage in a lively book club discussion.
                     </p>
                   </div>
                 : undefined }
