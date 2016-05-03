@@ -21,8 +21,23 @@
   }
 }
 
-.books_container {
+.booklist_container {
+  padding-top: 0.75em;
   & h3 {
     margin-left: 1em;
+  }
+  & a {
+    color: #333333;
+    padding: 0.5em;
+    margin: 1em;
+    transition: all 0.2s ease-in-out;
+    &:visited {
+      color: #333333;
+    }
+    &:hover {
+      text-decoration: none;
+      background-color: #DCB640;
+      color: #DEDEDE;
+    }
   }
 }

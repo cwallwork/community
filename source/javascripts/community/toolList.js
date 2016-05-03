@@ -2,7 +2,7 @@ module.exports = {
   toolList: [
     {
       title: 'TOOLKIT',
-      href: '',
+      href: '../public/Toolkit.pdf',
       icon: 'tools'
     },
     {
@@ -12,38 +12,49 @@ module.exports = {
     },
     {
       title: 'SIGN UP SHEET' ,
-      href: '' ,
+      href: '../public/Sign-In.pdf' ,
       icon: 'people'
     },
     {
       title: 'DISCUSSION QUESTIONS' ,
-      href: '' ,
+      href: '../public/Book_Club_Discussion_Questions.pdf' ,
       icon: 'question'
     },
     {
       title: 'FACT OR FICTION GAME' ,
-      href: '' ,
+      href: '../public/Fact_or_Fiction_Game.pdf' ,
       icon: 'puzzlepiece'
     },
     {
       title: 'HANDOUT: FACTS & FIGURES' ,
-      href: '' ,
+      href: '../public/Fact_Sheet.pdf' ,
       icon: 'stats'
     },
-    {
-      title: 'HANDOUT: ACTIONS YOU CAN TAKE' ,
-      href: '' ,
-      icon: 'rocket'
-    },
+    // To be released later
+    // {
+    //   title: 'HANDOUT: ACTIONS YOU CAN TAKE' ,
+    //   href: '' ,
+    //   icon: 'rocket'
+    // },
     {
       title: 'INVITATION COPY' ,
-      href: '' ,
+      href: '../public/Book_Club_Participant_Email_1_Invitation.docx' ,
       icon: 'pencil'
     },
     {
       title: 'THANK YOU COPY' ,
-      href: '' ,
+      href: '../public/Book_Club_Participant_Email_2_thank_you_follow-up.docx' ,
       icon: 'pencil'
     },
+    {
+      title: 'RESOURCES',
+      href: '../public/Resources.pdf',
+      icon: 'gear'
+    },
+    {
+      title: 'PRESENTATION',
+      href: '../public/Presentation_Talking_Points.pdf',
+      icon: 'book'
+    }
   ]
 }

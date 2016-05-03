@@ -1,20 +1,24 @@
-$hive-yellow: #dcb640;
+$hive-yellow: lighten(#dcb640, 10%);
 $text-brown: #474433;
 
 .tool_entry {
-  width: 30vw;
+  width: 20vw;
   background-color: $hive-yellow;
   margin: 1em;
   text-align: center;
   padding: 1.5em;
+  min-width: 250px;
+  max-width: 300px;
+  border-radius: 0.3em;
   text-decoration: none;
-  & a {
+  & .tool_link {
+    font-size: 0.8em;
     text-decoration: none;
     width: 100%;
+    height: 100%;
     & img {
       margin: auto;
-      max-width: 3em;
-      stroke: white;
+      max-width: 3.5em;
     }
     &:visited {
       color: $text-brown;
@@ -27,4 +31,13 @@ $text-brown: #474433;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.tools_container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center; 
+  & h4 {
+    padding: 0.5em;
+  }
 }

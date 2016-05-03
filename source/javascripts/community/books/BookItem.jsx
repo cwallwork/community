@@ -19,16 +19,20 @@ class BookItem extends React.Component {
       let newPlacement = clone(this.state.placement);
 
         const rect = this.refs.bookItem.getBoundingClientRect();
-        const actualWidth = this.refs.bookItem.offsetWidth;
-        const actualHeight = this.refs.bookItem.offsetHeight;
         const viewport = document.documentElement;
-        
-            newPlacement = 
-                        rect.bottom + actualHeight > viewport.clientHeight ? 'top'    :
-                        rect.right  + actualWidth  > viewport.clientWidth  ? 'left'   :
-                        rect.left   - actualWidth  < 0 ? 'right'  :
-                        rect.top    - actualHeight < 0 ? 'bottom' :
-                        this.state.placement
+
+        const spaceTop = rect.top;
+        const spaceLeft = rect.left;
+        const spaceBottom = viewport.clientHeight - rect.bottom;
+        const spaceRight = viewport.clientWidth - rect.right;
+
+        const maxSpace = Math.max(spaceTop, spaceLeft, spaceRight, spaceBottom);
+
+        newPlacement = maxSpace == spaceBottom ? 'bottom' :
+                       maxSpace == spaceLeft   ? 'left' :
+                       maxSpace == spaceRight  ? 'right' :
+                       maxSpace == spaceTop    ? 'top' :
+                       this.state.placement
 
         if(this.state.placement != newPlacement) {
           this.setState({placement: newPlacement});
