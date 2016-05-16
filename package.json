@@ -5,8 +5,10 @@
   "main": "webpack.config.js",
   "dependencies": {
     "babel-preset-stage-0": "^6.5.0",
+    "clipboard": "^1.5.10",
     "dom-helpers": "^2.4.0",
     "jsonschema": "^1.1.0",
+    "querystring": "^0.2.0",
     "ramda": "^0.20.1",
     "react-bootstrap": "^0.28.5",
     "react-overlays": "^0.6.3",

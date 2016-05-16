@@ -15,8 +15,8 @@ class Tools extends React.Component {
 
       const getTools = mapWithIndex((tool, index) => {
         return (
-          <div key={index} className="tool_entry">
-            <a className="tool_link" href={tool.href}>
+          <div key={index} className="tool_entry" >
+            <a className="tool_link" href={tool.href} target={tool.page ? null : "_blank"}>
               <img src={"../images/tool_icons/" + tool.icon + ".svg"}/>
               <p>{tool.title}</p>
             </a>

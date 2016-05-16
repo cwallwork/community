@@ -1,5 +1,6 @@
 import React        from 'react';
 import Header       from './community/Header.jsx';
+import Signup       from './Signup';
 
 class Landing extends React.Component {
     constructor(props) {
@@ -21,12 +22,13 @@ class Landing extends React.Component {
                 The global refugee crisis has grown into <b>the largest humanitarian issue of our time.</b> Together, we can change the way Americans talk and think about refugees.                
               </p>
               <p>
-                Be part of this important effort. Sign up to host a <b>Community Conversation</b> - something as simple as a gathering of your close friends. Connect to the refugee experience through reading and discussing stories from the perspective of those displaced by violence and conflict.
+                Join us today and sign up to host a Community Conversation - something as simple as a gathering of your close friends. Connect to the refugee experience through reading and discussing stories from the perspective of those displaced by violence and conflict. 
               </p>
               <p>
-                By signing up to host a community conversation, you will help encourage others to connect their own experiences with those of refugees around the world and enable them to appreciate and understand the global refugee crisis in new ways.
+                Once you sign up you will be able to access all the tools and resources you need to plan a great event and engage in a lively discussion. We make it easy. Choose a book, invite others to join you, use our resources and start reading!               
               </p>
-              <a className="signup_button" href="/#/login">Sign Up</a>
+              <Signup groundwork={this.props.groundwork}/>
+              <p><a className="signup_button" href="/#/login">Log in</a></p>
             </div>
           </div>
         )

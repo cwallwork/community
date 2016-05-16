@@ -9,7 +9,7 @@ class Community extends React.Component {
         this.groundwork = this.props.groundwork;
     }
 
-    static contextTypes = {
+    static contextTypes() {
       router: React.PropTypes.object
     }
 

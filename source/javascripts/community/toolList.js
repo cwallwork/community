@@ -8,7 +8,8 @@ module.exports = {
     {
       title:'BOOK LIST',
       href:'/#/books',
-      icon: 'book'
+      icon: 'book',
+      page: true
     },
     {
       title: 'SIGN UP SHEET' ,
@@ -37,14 +38,16 @@ module.exports = {
     //   icon: 'rocket'
     // },
     {
-      title: 'INVITATION COPY' ,
-      href: '../public/Book_Club_Participant_Email_1_Invitation.docx' ,
-      icon: 'pencil'
+      title: 'INVITATION EMAIL' ,
+      href: '/#/invitation' ,
+      icon: 'pencil',
+      page: true
     },
     {
-      title: 'THANK YOU COPY' ,
-      href: '../public/Book_Club_Participant_Email_2_thank_you_follow-up.docx' ,
-      icon: 'pencil'
+      title: 'THANK YOU EMAIL' ,
+      href: '/#/thankyou' ,
+      icon: 'pencil',
+      page: true
     },
     {
       title: 'RESOURCES',

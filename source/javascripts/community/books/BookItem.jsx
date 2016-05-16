@@ -51,7 +51,7 @@ class BookItem extends React.Component {
 
         return (
           <div onMouseEnter={() => this.updatePlacement()}ref="bookItem" className="BookItem" key={this.props.key}>
-            <OverlayTrigger trigger={['hover', 'focus']} placement={this.state.placement} overlay={<Popover title={title}>
+            <OverlayTrigger trigger={['hover', 'focus']} placement={this.state.placement} overlay={<Popover id="blurb_pop" title={title}>
             <p><b>{specs}</b></p>
             {blurb}
             </Popover>}>

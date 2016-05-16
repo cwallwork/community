@@ -1,7 +1,6 @@
 import React              from 'react';
 import LoginForm          from './login/LoginForm.jsx';
-import SignupForm         from './login/SignupForm.jsx';
-import {clone}            from 'ramda';
+import {clone, isEmpty}   from 'ramda';
 import Header             from './community/Header.jsx';
 
 class Login extends React.Component {
@@ -9,13 +8,16 @@ class Login extends React.Component {
         super(props);
         this.displayName = 'Login';
         this.groundwork = this.props.groundwork;
-        this.handleSignup = this.handleSignup.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
+        this.showReset = this.showReset.bind(this);
+        this.resetPassword = this.resetPassword.bind(this);
 
         this.state = {
-          showSignup: true,
           loginErrors: [],
-          signupErrors: []
+          showReset: false,
+          hasReset: false,
+          resetEmail: "",
+          resetErrors: ""
         }
     }
 
@@ -30,10 +32,9 @@ class Login extends React.Component {
     }
 
     handleLogin(email,password){
-
       this.groundwork.auth.fetchUsingPassword(email,password)
       .then((response) => {
-        console.log(response)
+        console.log(response);
         this.context.router.push('/community');
       })
       .catch((response) => {
@@ -49,43 +50,77 @@ class Login extends React.Component {
       });
     }
 
-    handleSignup(Formfields) {
-      this.groundwork.profiles.create(Formfields)
-      .then((resp) => this.setState({showSignup: false}))
-      .catch((resp) => {
-        if (resp.status == "400") {
-          let newSignupErrors = clone(this.state.signupErrors);
-          newSignupErrors.push("Your Signup was unsuccessful, please try again");
-          this.setState({signupErrors: newSignupErrors});
+    resetPassword(){
+      this.groundwork.profiles.requestResetToken(this.state.resetEmail)
+      .then((resp) => {
+        console.log(resp);
+        if (resp.status == 200) {
+          this.setState(
+            {
+              showReset:false,
+              hasReset: true,
+              resetErrors: ""
+          });
         }
-      });
+        else {
+          this.setState ({
+            resetErrors: "Something went wrong, please try again",
+            resetEmail: ""
+            });
+        }
+      })
+      .catch((resp) => {
+        console.log(resp);
+        if (resp.status == 404) {
+          this.setState({
+            resetErrors: "That email was not found, please re-check and try again",
+            resetEmail: ""
+          })
+        }
+        else {
+              this.setState({
+                resetErrors: "Something went wrong, please try again",
+                resetEmail: ""
+              });
+        }
+      })
+    }
+
+    update(event) {
+      this.setState({resetEmail: event.target.value});
+    }
+
+    showReset(event) {
+      event.preventDefault();
+      this.setState({showReset: true});
     }
 
     render() {
         return (
-          <div className="login_signup">
-            <Header title="LOGIN OR SIGNUP"/>
-            { this.state.showSignup
-                ? <div className="signup_intro_text">
-                    <p>
-                      Sign up to host.
-                    </p>
-                    <p>
-                      Hosting a Community Conversations Book Club is easy.<br/>
-                      Choose a book, invite your guests, and start reading!
-                    </p>
-                    <p>
-                      Sign up below to access all the tools and resources you need to plan a great event and engage in a lively book club discussion.
-                    </p>
-                  </div>
-                : undefined }
-
-            { this.state.showSignup ? <SignupForm errors={this.state.signupErrors} handleSignup={this.handleSignup} /> : undefined }
-            { !this.state.showSignup ? <p className="signup_thanks">Thanks for signing up. Please log in</p> : undefined }
+          <div className="login">
+            <Header title="LOGIN"/>
             <LoginForm errors={this.state.loginErrors} handleLogin={this.handleLogin}/>
-            
+            {this.state.showReset ?
+              <form className="password_reset_form">
+                <label>Email Address</label>
+                <input type="text" onChange={(e) => this.update(e)} value={this.state.resetEmail}/>
+                <button onClick={this.resetPassword}>Reset Password</button>
+              </form>
+              : this.state.hasReset
+                  ? <p className="reset_confirm_text">
+                      Your password has been reset. Please check your email to set a new password.
+                    </p>
+                  : <button onClick={(e) => this.showReset(e)} href="#">Forgot password?</button>
+            }
+            {
+              !isEmpty(this.state.resetErrors)
+              ? <p className="reset_error_text">
+                  {this.state.resetErrors}
+                </p>
+              : undefined
+            }
           </div>
-          );
+        );
     }
 }
 
