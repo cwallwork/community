@@ -1,43 +1,36 @@
-.invitation_container {
+.email_container {
   width: 90%;
   margin: auto;
   max-width: 750px;
   text-align: left;
+  padding: 0.8em;
+  background: lighten(#dedede, 20%);
+  border-radius: 0.5em;
 }
 
-.invitation_email_intro {
-  padding: 1.5em;
-  font-size: 2em;
-  max-width: 700px;
-  margin: auto;
-}
-.copy_button {
-  margin: auto;
-}
-
-.invitation {
-  text-align: center;
-}
-
-
-.thankyou_container {
-  width: 90%;
-  margin: auto;
-  max-width: 750px;
-  text-align: left;
-}
-
-.thankyou_email_intro {
+.email_intro {
   padding: 1.5em;
   font-size: 2em;
   max-width: 700px;
   margin: auto;
 }
 
-.copy_button {
-  margin: auto;
-}
-
-.thankyou {
+.email {
   text-align: center;
 }
+
+.copy_button {
+  display: block;
+  color: white;
+  background-color: $dark-brown;
+  border: solid 2px $dark-brown;
+  margin: auto;
+  margin-top: 1em;
+  padding: 0.5em;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: $dark-brown;
+    background-color: #dedede;
+  }
+}
+

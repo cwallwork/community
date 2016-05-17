@@ -22,7 +22,7 @@ class Books extends React.Component {
         <div className="books_container">
           <Header title="Books"/>
           <div className="booklist_container">
-            <a href="../public/Book_List.pdf">GET THE BOOK LIST AS A PDF</a>
+            <a className="pdf_link" href="../public/Book_List.pdf">GET THE BOOK LIST AS A PDF</a>
             <h3>FICTION</h3>
             <div className="fiction_container">
               {fiction.map((book, index) => <BookItem key={index} book={book}/>)}

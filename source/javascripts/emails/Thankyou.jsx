@@ -9,7 +9,8 @@ class Thankyou extends React.Component {
         this.state = {
           givenName: "Your ",
           familyName: "Name"
-        }
+        };
+        this.clipboard = new Clipboard('.copy_button');
     }
 
     componentWillMount() {
@@ -25,19 +26,18 @@ class Thankyou extends React.Component {
         
       });     
     }
-
-    copy(){
-      // do stuff
-    }
     
     render() {
         return (
-          <div className="thankyou">
+          <div className="email">
             <Header title="THANKYOU EMAIL"/>
-            <p className="thankyou_email_intro">
+            <p className="email_intro">
               Here is an email you can use to thank your friends for participating in your book club. Just copy and paste the text below into your email client.
             </p>
-            <div className="thankyou_container">
+            <p>
+              (You can edit the text in the box below before you copy)
+            </p>
+            <div className="email_container">
               <h2>Hi Friends!</h2>
               <p>
                 It was great to see you last night. I really enjoyed our meaningful conversations about [BOOK TITLE] especially [INSERT REFERENCE TO SPECIFIC CONVERSATION]. Today, I feel more connected to the global refugee crisis and want to continue learning about the situation. I hope you do too.
@@ -64,7 +64,7 @@ class Thankyou extends React.Component {
                 {this.state.givenName + " " + this.state.familyName} 
               </p>
             </div>
-            <button onClick={() => this.copy}>Copy to Clipboard</button>
+            <button className="copy_button" data-clipboard-target=".email_container">Copy to Clipboard</button>
           </div>
         );
     }

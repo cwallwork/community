@@ -55,7 +55,7 @@ class BookItem extends React.Component {
             <p><b>{specs}</b></p>
             {blurb}
             </Popover>}>
-              <img src={"../../images/books/" + image + ".jpg"}/>
+            <a href={url} target="_blank"><img src={"../../images/books/" + image + ".jpg"}/></a>
             </OverlayTrigger>
           </div>
         )

@@ -30,12 +30,15 @@ class Invitation extends React.Component {
     render() {
         
         return (
-          <div className="invitation">
+          <div className="email">
             <Header title="INVITATION EMAIL"/>
-              <p className="invitation_email_intro">
+            <p className="email_intro">
               Here is an email you can use to invite your friends to your book club event. Just copy and paste the text below into your email client.
             </p>
-            <div className="invitation_container">
+            <p>
+              (You can edit the text in the box below before you copy)
+            </p>
+            <div className="email_container" contentEditable>
               <h2>Hi Friends!</h2>
               <p>
                 As you know, the global refugee crisis has been in the news a lot recently. As Americans, we are aware that a crisis is happening but are less connected to it and therefore aren’t reacting in the meaningful ways required to address an issue of this scale.
@@ -53,10 +56,10 @@ class Invitation extends React.Component {
               1. Decide if you’d like to join the book club conversation and let me know via email by [INSERT DATE].
               </p>
               <p className="invitation_point">
-                2. Help choose a book from <a href="http://letstalkaboutit.org/#/books" target="_blank">this curated list.</a> <span className="invitation_highlight">(You can set up a voting system on Doodle or offer some suggested book ideas to get a conversation started. You should decide what is best way to approach with your group)</span>
+                2. Help choose a book from <a href="http://letstalkaboutit.org/#/books" target="_blank">this curated list.</a> <span className="invitation_highlight"><b><i>(You can set up a voting system on Doodle or offer some suggested book ideas to get a conversation started. You should decide what is best way to approach with your group)</i></b></span>
               </p>
               <p className="invitation_point">
-                3. Share your availability. <span className="invitation_highlight">(We recommend providing three date/time options for people to choose from. You can also use Doodle or a similar tool for ease of collecting everyone’s availability.)</span>
+                3. Share your availability. <span className="invitation_highlight"><b><i>(We recommend providing three date/time options for people to choose from. You can also use Doodle or a similar tool for ease of collecting everyone’s availability.)</i></b></span>
               </p>
               <p>
                 I am really looking forward to hosting this event and hope you will join me in learning more about the global refugee crisis. Let me know if you can participate. I am happy to answer any questions you may have.
@@ -68,7 +71,7 @@ class Invitation extends React.Component {
                 {this.state.givenName + " " + this.state.familyName}
               </p>
             </div>
-            <button className="copy_button" data-clipboard-target=".invitation_container">Copy to Clipboard</button>
+            <button className="copy_button" data-clipboard-target=".email_container">Copy to Clipboard</button>
           </div>
         );
     }
