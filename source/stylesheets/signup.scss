@@ -1,5 +1,4 @@
 $dark-brown: #333333;
-
 .signup_intro_text {
   width: 90vw;
   max-width: 550px;
@@ -16,9 +15,10 @@ $dark-brown: #333333;
     color: white;
     text-align: left;
   }
-  width: 90vw;
+  width: 100%;
   max-width: 550px;
   margin: auto;
+  margin-top: 2.5em;
   background-color: #ebebeb;
   text-align: center;
   & form {
@@ -27,16 +27,33 @@ $dark-brown: #333333;
       width: 25%;
       text-align: right;
       margin-right: 1em;
+      @media screen and (max-width: 500px) {
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        padding-bottom: 0.5em;
+      }
     }
     & input {
       display: inline-block;
       width: 45%;
+      @media screen and (max-width: 500px) {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
     }
     & p {
       width: 80%;
       margin: auto;
       text-align: center;
       padding: 0.5em;
+      @media screen and (max-width: 500px) {
+        width: 95%;
+      }
+    }
+    & p:last-child{
+      margin-top: 0;
     }
     & button {
       font-size: 1.5em;
@@ -48,6 +65,12 @@ $dark-brown: #333333;
       margin: auto;
       margin-top: 0.5em;
       display: block;
+      transition: all 0.3s ease-in-out;
+      border: solid 2px $dark-brown;
+       &:hover {
+        color: $dark-brown;
+        background-color: #dedede;
+      }
     }
   }
 }
@@ -62,7 +85,7 @@ $dark-brown: #333333;
 
 .signup {
   & p {
-    padding-top: 1.5em;
+    padding-top: 0.5em;
   }
 }
 

@@ -37,7 +37,7 @@ class Thankyou extends React.Component {
             <p>
               (You can edit the text in the box below before you copy)
             </p>
-            <div className="email_container">
+            <div className="email_container" contentEditable="true">
               <h2>Hi Friends!</h2>
               <p>
                 It was great to see you last night. I really enjoyed our meaningful conversations about [BOOK TITLE] especially [INSERT REFERENCE TO SPECIFIC CONVERSATION]. Today, I feel more connected to the global refugee crisis and want to continue learning about the situation. I hope you do too.

@@ -7,32 +7,15 @@
 @import "signup";
 @import "email";
 @import "password-reset";
+@import "header";
 
 $headerFont: "Helvetica Neue Condensed Bold", 'Arimo', sans-serif;
 $bodyFont: "Helvetica Neue", 'Arimo', sans-serif;
 
 $background-grey: #dedede;
 
-
-.header{
-  text-align: center;
-  font-family: $headerFont;
-  font-size: 4em;
-  font-weight: 700;
-  color: #474433;
-  background-color: #dcb640;
-  padding: 1em;
-  & h2 {
-    margin: auto;
-    font-size: 2vw;
-    color: white;
-    width: 70%;
-    padding: 0.75em;
-  }
-}
-
 .landing_body {
-  width: 85%;
+  width: 99%;
   max-width: 800px;
   font-size: 1.25em;
   margin: auto;
@@ -45,12 +28,16 @@ $background-grey: #dedede;
     margin-top: 1em;
     background-color: #474433;
     color: white;
-    padding: 0 1.5em 0 1.5em;
+    // padding: 0 1.5em 0 1.5em;
     border: none;
     display: block;
-    width: 8em;
+    width: 6em;
+    transition: all 0.3s ease-in-out;
+    border: solid 2px $dark-brown;
     &:hover {
       text-decoration: none;
+      color: $dark-brown;
+      background-color: #dedede;
     }
   }
 }

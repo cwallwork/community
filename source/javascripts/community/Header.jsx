@@ -9,7 +9,7 @@ class Header extends React.Component {
       const title = this.props.title;
 
         return (
-          <div className="community_header">
+          <div className="header">
             <h1>COMMUNITY CONVERSATIONS:</h1>
             <h1>{title}</h1>
           </div>

@@ -2,9 +2,13 @@ $font: 'Helvetica Neue Condensed Bold', 'Arimo', sans-serif;
 $hive-yellow: #dcb640;
 $text-brown: #474433;
 
-.community_header {
+.header {
+  text-align: center;
+  font-size: 4em;
+  font-weight: 700;
+  color: #474433;
+  padding: 1em;
   background-color: $hive-yellow;
-  padding: 3vw 3em 1vw 4em;
   box-sizing: border-box;
   font-family: $font;
   & h1{
@@ -12,5 +16,21 @@ $text-brown: #474433;
     font-family: $font;
     font-size: 4.5vw;
     font-weight: 700;
+  }
+  & h2 {
+    margin: auto;
+    font-size: 2vw;
+    color: white;
+    width: 70%;
+    padding: 0.75em;
+  }
+  @media screen and (max-width: 900px) {
+    font-size: 2em;
+    & h1 {
+      
+    }
+    & h2 {
+      font-size: 0.5em;
+    }
   }
 }
