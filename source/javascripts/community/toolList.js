@@ -3,33 +3,33 @@ module.exports = {
     {
       title: 'TOOLKIT',
       href: '../public/Toolkit.pdf',
-      icon: 'tools'
+      icon: 'Toolkit'
     },
     {
       title:'BOOK LIST',
       href:'/#/books',
-      icon: 'book',
+      icon: 'Booklist',
       page: true
     },
     {
       title: 'SIGN UP SHEET' ,
       href: '../public/Sign-In.pdf' ,
-      icon: 'people'
+      icon: 'SignUp'
     },
     {
       title: 'DISCUSSION QUESTIONS' ,
       href: '../public/Book_Club_Discussion_Questions.pdf' ,
-      icon: 'question'
+      icon: 'Questions'
     },
     {
       title: 'FACT OR FICTION GAME' ,
       href: '../public/Fact_or_Fiction_Game.pdf' ,
-      icon: 'puzzlepiece'
+      icon: 'FactorFiction'
     },
     {
       title: 'HANDOUT: FACTS & FIGURES' ,
       href: '../public/Fact_Sheet.pdf' ,
-      icon: 'stats'
+      icon: 'Facts'
     },
     // To be released later
     // {
@@ -40,24 +40,24 @@ module.exports = {
     {
       title: 'INVITATION EMAIL' ,
       href: '/#/invitation' ,
-      icon: 'pencil',
+      icon: 'Email',
       page: true
     },
     {
       title: 'THANK YOU EMAIL' ,
       href: '/#/thankyou' ,
-      icon: 'pencil',
+      icon: 'Email',
       page: true
     },
     {
       title: 'RESOURCES',
       href: '../public/Resources.pdf',
-      icon: 'gear'
+      icon: 'Resources'
     },
     {
       title: 'PRESENTATION',
       href: '../public/Presentation_Talking_Points.pdf',
-      icon: 'book'
+      icon: 'Presentation'
     }
   ]
 }

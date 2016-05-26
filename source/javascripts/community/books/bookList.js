@@ -5,7 +5,7 @@ module.exports = {
             author: "Khaled Hosseini",
             specs: "Fiction, 2008, 432 pages",
             blurb: "Born a generation apart and with very different ideas about love and family, Mariam and Laila are two women brought jarringly together by war, by loss and by fate. As they endure the ever escalating dangers around them -- in their home as well as in the streets of Kabul -- they come to form a bond that makes them both sisters and mother-daughter to each other, and that will ultimately alter the course not just of their own lives but of the next generation. With heart-wrenching power and suspense, Hosseini shows how a woman’s love for her family can move her to shocking and heroic acts of self-sacrifice, and that in the end it is love, or even the memory of love, that is often the key to survival. (Amazon.com)",
-            image: "Hosseini2",
+            image: "Hosseini",
             url: "http://www.indiebound.org/book/9781594483851"
           },
           {
@@ -45,7 +45,7 @@ module.exports = {
             author: "Khaled Hosseini",
             specs: "Fiction, 2003, 400 pages",
             blurb: "Hosseini’s stunning debut novel starts as an eloquent Afghan version of the American immigrant experience in the late 20th century, but betrayal and redemption come to the forefront when the narrator, a writer, returns to his ravaged homeland to rescue the son of his childhood friend after the boy’s parents are shot during the Taliban takeover in the mid ‘90s. Add an incisive, perceptive examination of recent Afghan history and its ramifications in both America and the Middle East, and the result is a complete work of literature that succeeds in exploring the culture of a previously obscure nation that has become a pivot point in the global politics of the new millennium. (Publishers Weekly)",
-            image: "Hosseini",
+            image: "Hosseini2",
             url: "http://www.indiebound.org/book/9781594631931"
           },
           {

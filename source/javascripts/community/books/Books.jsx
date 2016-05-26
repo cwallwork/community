@@ -20,7 +20,7 @@ class Books extends React.Component {
 
         return (
         <div className="books_container">
-          <Header title="Books"/>
+          <Header title="BOOKS"/>
           <div className="booklist_container">
             <a className="pdf_link" href="../public/Book_List.pdf">GET THE BOOK LIST AS A PDF</a>
             <h3>FICTION</h3>
